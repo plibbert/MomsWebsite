@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class LandingController {
 
     @GetMapping
-    @ResponseBody
     public String welcome() {
-        return "Welcome to Muriel Mays!";
+
+        return "landingpage";
     }
 }

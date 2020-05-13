@@ -10,24 +10,26 @@ import java.util.List;
 @Controller
 @RequestMapping("order")
 public class RequestOrderController {
-//
-//    @RequestMapping(method={RequestMethod.GET, RequestMethod.POST})
-//    @ResponseBody
-//    public String orderFormQueries(@RequestParam String name) {
-//        return "you are " + name;
-//    }
 
 
-    @GetMapping("form")
-    public String orderForm() {
-        return "form";
+    private static List<String> newOrders = new ArrayList<>();
+
+
+    @GetMapping
+    public String renderOrderForm(){
+        return "orders/form";
     }
 
-    @RequestMapping(method={RequestMethod.GET, RequestMethod.POST}, value = "orderSubmit")
-    public String orderFormResponse(@RequestParam String name, Model model) {
-        String thanks= "Thank you for your interest " + name + ". Your request has been submitted and we will contact you soon!";
-        model.addAttribute("thanks", thanks);
-        return "orderformsent";
+    @PostMapping
+    public String submitOrder(@RequestParam String name){
+        newOrders.add(name);
+        return "redirect:/order/create";
+    }
+
+    @GetMapping("create")
+    public String displayOrder(Model model){
+        model.addAttribute("order", newOrders);
+        return "orders/orderformsent";
     }
 
 }

@@ -4,26 +4,26 @@
 <head th:fragment="head">
 
     <!-- Bootstrap stylesheets and script -->
-    <link th:href="@{/css/bootstrap.css}" rel="stylesheet" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
     <link th:href="@{/css/muriel_mays.css}" rel="stylesheet" />
-    <script type="text/javascript" th:src="@{/js/bootstrap.js}"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 
-    <title th:text="'MurielMays' + ${title == null ? '' : ' :: ' + title}">Muriel May's Sweets and Treats</title>
+    <meta charset="UTF-8"/>
+    <title>Muriel May's</title>
 </head>
 
-<!--<body>-->
+<body class="container">
 
-<!--<div th:fragment="page-header" class="navbar navbar-inverse navbar-fixed-top">-->
-<!--    <div class="container">-->
-<!--        <div class="navbar-header">-->
-<!--            <a th:href="@{/}" class="navbar-brand">TechJobs</a>-->
-<!--        </div>-->
-<!--        <div class="navbar-collapse collapse">-->
-<!--            <ul class="nav navbar-nav">-->
-<!--                <li><a th:href="@{/search}">Search</a></li>-->
-<!--                <li><a th:href="@{/list}">List</a></li>-->
-<!--            </ul>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</div>-->
+<nav th:fragment="page-header">
+    <h2>Muriel May's Sweets and Treats</h2>
+            <ul class="nav">
+                <li class="nav-item"><a th:href="@{/}">Main</a></li>
+                <li class="nav-item"><a th:href="@{/about}">About Us</a></li>
+                <li class="nav-item"><a th:href="@{/recipes}">Recipes</a></li>
+                <li class="nav-item"><a th:href="@{/gallery}">Gallery</a></li>
+                <li class="nav-item"><a th:href="@{/order}">Request an Order</a></li>
+            </ul>
+</nav>
 
+</body>
+</html>
