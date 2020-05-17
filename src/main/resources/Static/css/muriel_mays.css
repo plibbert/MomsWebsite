@@ -1,6 +1,4 @@
-.body-content {
-    margin-top: 72px;
-}
+margin: 10px;
 
 td, th {
     padding: 10px;
@@ -12,4 +10,27 @@ th {
 
 td {
     vertical-align: top;
+}
+a{
+color: black;
+
+font-size:20px;
+}
+ul.nav {
+left-padding: 20px
+display: flex;
+justify-content: space-around;
+}
+nav{
+background-color: rgb(255, 242, 3);
+border-radius: 25px;
+padding-bottom: 10px;
+padding-top: 10px;
+}
+h2{
+display: flex;
+justify-content: center;
+}
+body{
+background-color: rgb(255, 253, 194);
 }

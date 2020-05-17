@@ -13,18 +13,8 @@ import java.util.List;
 @RequestMapping("recipes")
 public class RecipesController {
 
-    @GetMapping
-    @ResponseBody
-    public String recipes(){
-        return "Recipe list soon...";
-    }
-    @GetMapping("list")
-    public String recipesForTesting(Model model){
-        List<String> recipes = new ArrayList<>();
-        recipes.add("No Bake Cookies");
-        recipes.add("Oatmeal Cream Pies");
-        recipes.add("Shitty Saltines");
-        model.addAttribute("recipes", recipes);
-        return "recipelist";
-    }
+        @GetMapping
+        public String welcome(){
+            return "recipelist";
+        }
 }
