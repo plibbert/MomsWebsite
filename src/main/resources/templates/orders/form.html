@@ -6,10 +6,38 @@
 <div th:replace="fragments :: page-header"></div>
 
 <body class="container">
+
+<p class= "orderSent" th:text="${formStatus}"></p>
 <h3>Request an Order</h3>
-    <form method = 'post' action="/order/create">
-        <input type = 'text' name = 'name' />
-        <input type = 'Submit' value = 'Deets plix'/>
+
+<form action="/order" method="post" >
+    Name: <br>
+        <input type = 'text' name = 'name'>
+    <br>Email Address: <br>
+        <input type= 'text' name='emailAddress'>
+    <br>Phone Number: <br>
+        <input type = 'text' name='phoneNumber'>
+    <br>Date Needed: <br>
+        <input type = 'text' name= 'dateNeeded'>
+    <br>Request Type: <br>
+        <select name='requestType'>
+            <option value = 'select one'>Select One</option>
+            <option value = 'catering'>Dessert Catering</option>
+            <option value = 'single'>Single Order</option>
+            <option value = 'multi'>Multiple Orders</option>
+            <option value = 'question'>I have questions</option>
+        </select>
+    <br>Please provide a brief description of the event or order you are requesting.<br>
+        If you have a question, please type it here. <br>
+        <textarea name='description' rows="5" cols="50"></textarea>
+    <br>Preferred Contact Method<br>
+        <select name = 'contact'>
+            <option value = 'select one'>Select One</option>
+            <option value = 'phone'>Phone Call</option>
+            <option value = 'email'>Email</option>
+        </select><br>
+    <br>
+        <input type = 'submit' value = 'Submit'>
     </form>
 </body>
 </html>

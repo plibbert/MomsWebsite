@@ -4,16 +4,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
-import java.util.List;
 
 @Controller
 @RequestMapping("order")
 public class RequestOrderController {
-
-
-    private static List<String> newOrders = new ArrayList<>();
-
 
     @GetMapping
     public String renderOrderForm(){
@@ -21,15 +15,10 @@ public class RequestOrderController {
     }
 
     @PostMapping
-    public String submitOrder(@RequestParam String name){
-        newOrders.add(name);
-        return "redirect:/order/create";
+    public String submitOrder(@RequestParam String name, Model model){
+    model.addAttribute("formStatus","Your request has been sent. We will get in touch with you shortly!");
+        return "orders/form";
     }
 
-    @GetMapping("create")
-    public String displayOrder(Model model){
-        model.addAttribute("order", newOrders);
-        return "orders/orderformsent";
-    }
 
 }
