@@ -8,6 +8,7 @@ public class Recipe {
         private static int nextId = 1;
 
         private Name name;
+        private Category category;
         private Servings servings;
         private PrepTime prepTime;
         private Ingredients ingredients;
@@ -29,9 +30,10 @@ public class Recipe {
         }
 
         // Initialize the id and value fields.
-        public Recipe(Name aName, Servings aServings, PrepTime aPrepTime, Ingredients anIngredients, Step1 aStep1, Step2 aStep2, Step3 aStep3, Step4 aStep4, Step5 aStep5, Step6 aStep6, Step7 aStep7, Step8 aStep8, Step9 aStep9, OriginalCreator anOriginalCreator) {
+        public Recipe(Name aName, Category aCategory, Servings aServings, PrepTime aPrepTime, Ingredients anIngredients, Step1 aStep1, Step2 aStep2, Step3 aStep3, Step4 aStep4, Step5 aStep5, Step6 aStep6, Step7 aStep7, Step8 aStep8, Step9 aStep9, OriginalCreator anOriginalCreator) {
             this();
             name = aName;
+            category = aCategory;
             servings = aServings;
             prepTime = aPrepTime;
             ingredients = anIngredients;
@@ -54,6 +56,9 @@ public class Recipe {
             if (name.getValue().equals("") || name.getValue() == null){
                 name.setValue("Data not available");
             }
+            if (category.getValue().equals("") || category.getValue() == null){
+                category.setValue("Data not available");
+            }
             if (servings.getValue().equals("") || servings.getValue() == null){
                 servings.setValue("Data not available");
             }
@@ -69,6 +74,7 @@ public class Recipe {
 
             output = String.format("\nID: %d\n" +
                     "Name: %s\n" +
+                    "Category: %s\n" +
                     "Servings: %s\n" +
                     "Prep Time: %s\n" +
                     "Ingredients: %s\n" +
@@ -81,7 +87,7 @@ public class Recipe {
                     "Step 7: %s\n" +
                     "Step 8: %s\n" +
                     "Step 9: %s\n" +
-                    "Original Creator: %x\n", id, name, servings, prepTime, ingredients, step1, step2, step3, step4, step5, step6, step7, step8, step9, originalCreator);
+                    "Original Creator: %x\n", id, name, category, servings, prepTime, ingredients, step1, step2, step3, step4, step5, step6, step7, step8, step9, originalCreator);
             return output;
         }
 
@@ -113,6 +119,10 @@ public class Recipe {
         public void setName(Name name) {
             this.name = name;
         }
+
+        public Category getCategory() { return category; }
+
+        public void setCategory(Category category) {this.category = category;}
 
         public Servings getServings() {
             return servings;

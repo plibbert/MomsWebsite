@@ -5,9 +5,15 @@
 <body class="container">
 <div th:replace="fragments :: page-header"></div>
 
+<div class="container body-content">
 
+    <h1 th:text="${#strings.capitalizeWords(title)}"></h1>
+</div>
 
-<p>Welcome to the recipe page!</p>
+<div th:replace="fragments :: recipe-list-table"></div>
+
+</body>
+</html>
 
 </body>
 </html>

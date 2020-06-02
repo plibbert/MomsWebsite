@@ -23,6 +23,7 @@ public class RecipeData {
 
     private static ArrayList<Recipe> allRecipes;
     private static ArrayList<Name> allNames = new ArrayList<>();
+    private static ArrayList<Category> allCategories = new ArrayList<>();
     private static ArrayList<Servings> allServings = new ArrayList<>();
     private static ArrayList<PrepTime> allPrepTimes = new ArrayList<>();
     private static ArrayList<Ingredients> allIngredients = new ArrayList<>();
@@ -91,6 +92,8 @@ public class RecipeData {
         String theValue;
         if (fieldName.equals("name")){
             theValue = recipe.getName().toString();
+        } else if (fieldName.equals("category")){
+            theValue = recipe.getCategory().toString();
         } else if (fieldName.equals("servings")){
             theValue = recipe.getServings().toString();
         } else if (fieldName.equals("prep time")){
@@ -137,6 +140,8 @@ public class RecipeData {
         for (Recipe recipe : allRecipes) {
 
             if (recipe.getName().toString().toLowerCase().contains(value.toLowerCase())) {
+                recipes.add(recipe);
+            } else if (recipe.getCategory().toString().toLowerCase().contains(value.toLowerCase())) {
                 recipes.add(recipe);
             } else if (recipe.getServings().toString().toLowerCase().contains(value.toLowerCase())) {
                 recipes.add(recipe);
@@ -207,21 +212,23 @@ public class RecipeData {
             for (CSVRecord record : records) {
 
                 String aName = record.get(0);
-                String aServings = record.get(1);
-                String aPrepTime = record.get(2);
-                String anIngredients = record.get(3);
-                String aStep1 = record.get(4);
-                String aStep2 = record.get(5);
-                String aStep3 = record.get(6);
-                String aStep4 = record.get(7);
-                String aStep5 = record.get(8);
-                String aStep6 = record.get(9);
-                String aStep7 = record.get(10);
-                String aStep8 = record.get(11);
-                String aStep9 = record.get(12);
-                String anOriginalCreator = record.get(13);
+                String aCategory = record.get(1);
+                String aServings = record.get(2);
+                String aPrepTime = record.get(3);
+                String anIngredients = record.get(4);
+                String aStep1 = record.get(5);
+                String aStep2 = record.get(6);
+                String aStep3 = record.get(7);
+                String aStep4 = record.get(8);
+                String aStep5 = record.get(9);
+                String aStep6 = record.get(10);
+                String aStep7 = record.get(11);
+                String aStep8 = record.get(12);
+                String aStep9 = record.get(13);
+                String anOriginalCreator = record.get(14);
 
                 Name newName = (Name) findExistingObject(allNames, aName);
+                Category newCategory = (Category) findExistingObject(allCategories, aCategory);
                 Servings newServings = (Servings) findExistingObject(allServings, aServings);
                 PrepTime newPrepTime = (PrepTime) findExistingObject(allPrepTimes, aPrepTime);
                 Ingredients newIngredients = (Ingredients) findExistingObject(allIngredients, anIngredients);
@@ -240,7 +247,10 @@ public class RecipeData {
                     newName = new Name(aName);
                     allNames.add(newName);
                 }
-
+                if (newCategory == null){
+                    newCategory = new Category(aCategory);
+                    allCategories.add(newCategory);
+                }
                 if (newServings == null){
                     newServings = new Servings(aServings);
                     allServings.add(newServings);
@@ -296,7 +306,7 @@ public class RecipeData {
                     newOriginalCreator = new OriginalCreator(anOriginalCreator);
                     allOriginalCreators.add(newOriginalCreator);
                 }
-                Recipe newRecipe = new Recipe(newName, newServings, newPrepTime, newIngredients, newStep1, newStep2, newStep3, newStep4, newStep5, newStep6, newStep7, newStep8, newStep9, newOriginalCreator);
+                Recipe newRecipe = new Recipe(newName, newCategory, newServings, newPrepTime, newIngredients, newStep1, newStep2, newStep3, newStep4, newStep5, newStep6, newStep7, newStep8, newStep9, newOriginalCreator);
 
                 allRecipes.add(newRecipe);
             }
@@ -314,7 +324,12 @@ public class RecipeData {
         allNames.sort(new NameSorter());
         return allNames;
     }
-    public static ArrayList<Servings> getAllYields() {
+    public static ArrayList<Category> getAllCategories() {
+        loadData();
+        allCategories.sort(new NameSorter());
+        return allCategories;
+    }
+    public static ArrayList<Servings> getAllServings() {
         loadData();
         allServings.sort(new NameSorter());
         return allServings;
