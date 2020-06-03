@@ -29,22 +29,22 @@
         <table class="recipe-list">
             <tr th:each="recipe : ${recipes}">
                 <td>
-                    <div th:text="'ID: ' + ${recipe.id}"></div>
-                    <div th:text="'Name: ' + ${recipe.name}"></div>
-                    <div th:text="'Category: ' + ${recipe.category}"></div>
-                    <div th:text="'Servings: ' + ${recipe.servings}"></div>
-                    <div th:text="'Prep Time: ' + ${recipe.prepTime}"></div>
-                    <div th:text="'Ingredients: ' + ${recipe.ingredients}"></div>
-                    <div th:text="'Step 1: ' + ${recipe.step1}"></div>
-                    <div th:text="'Step 2: ' + ${recipe.step2}"></div>
-                    <div th:text="'Step 3: ' + ${recipe.step3}"></div>
-                    <div th:text="'Step 4: ' + ${recipe.step4}"></div>
-                    <div th:text="'Step 5: ' + ${recipe.step5}"></div>
-                    <div th:text="'Step 6: ' + ${recipe.step6}"></div>
-                    <div th:text="'Step 7: ' + ${recipe.step7}"></div>
-                    <div th:text="'Step 8: ' + ${recipe.step8}"></div>
-                    <div th:text="'Step 9: ' + ${recipe.step9}"></div>
-                    <div th:text="'Original Creator: ' + ${recipe.originalCreator}"></div>
+<!--                    <div th:text="'ID: ' + ${recipe.id}"></div>-->
+                    <div th:if = "${!#strings.isEmpty(recipe.name)}" th:text="'Name: ' + ${recipe.name}"></div>
+                    <div th:if = "${!#strings.isEmpty(recipe.category)}" th:text="'Category: ' + ${recipe.category}"></div>
+                    <div th:if = "${!#strings.isEmpty(recipe.servings)}" th:text="'Servings: ' + ${recipe.servings}"></div>
+                    <div th:if = "${!#strings.isEmpty(recipe.prepTime)}" th:text="'Prep Time: ' + ${recipe.prepTime}"></div>
+                    <div th:if = "${!#strings.isEmpty(recipe.ingredients)}" th:text="'Ingredients: ' + ${recipe.ingredients}"></div>
+                    <div th:if = "${!#strings.isEmpty(recipe.step1)}" th:text="'Step 1: ' + ${recipe.step1}"></div>
+                    <div th:if = "${!#strings.isEmpty(recipe.step2)}" th:text="'Step 2: ' + ${recipe.step2}"></div>
+                    <div th:if = "${!#strings.isEmpty(recipe.step3)}" th:text="'Step 3: ' + ${recipe.step3}"></div>
+                    <div th:if = "${!#strings.isEmpty(recipe.step4)}" th:text="'Step 4: ' + ${recipe.step4}"></div>
+                    <div th:if = "${!#strings.isEmpty(recipe.step5)}" th:text="'Step 5: ' + ${recipe.step5}"></div>
+                    <div th:if = "${!#strings.isEmpty(recipe.step6)}" th:text="'Step 6: ' + ${recipe.step6}"></div>
+                    <div th:if = "${!#strings.isEmpty(recipe.step7)}" th:text="'Step 7: ' + ${recipe.step7}"></div>
+                    <div th:if = "${!#strings.isEmpty(recipe.step8)}" th:text="'Step 8: ' + ${recipe.step8}"></div>
+                    <div th:if = "${!#strings.isEmpty(recipe.step9)}" th:text="'Step 9: ' + ${recipe.step9}"></div>
+                    <div th:if = "${!#strings.isEmpty(recipe.originalCreator)}" th:text="'Original Creator: ' + ${recipe.originalCreator}"></div>
                 </td>
             </tr>
         </table>
