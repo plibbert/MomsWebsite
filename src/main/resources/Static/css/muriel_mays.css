@@ -114,5 +114,79 @@ padding-left: 30px;
 img.galleryImage{
 height: 300px;
 width: 300px;
+border: 4px solid black;
+border-radius: 12%;
+margin: 10px 10px 10px 10px;
 }
+div.galleryDisplay{
+padding-top: 10px;
+display: flex;
+justify-content: center;
+flex-flow: wrap;
+}
+p.orderInfo{
+  padding-top: 10px;
+  color:rgb(40, 26, 2 );
+  font-size: 20px;
+  text-align: center;
+  }
+  img.muriel{
+  float: left;
+  height: 200px;
+  width: 200px;
+  border: 4px solid black;
+  border-radius: 12%;
+  margin: 5px 10px 10px 10px;
+  }
+  p.about{
+    padding-top: 10px;
+    color:rgb(40, 26, 2 );
+    font-size: 20px;
+    }
+  p.aboutTagLine{
+  padding-top: 10px;
+  color: rgb(40, 26, 2);
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  }
+  p.aboutEnd{
+  padding-top: 10px;
+  color: rgb(40, 26, 2);
+  font-size: 20px;
+  text-align: center;
+  }
+  img.bakersb{
+    float: left;
+    height: 120px;
+    width: 120px;
+    border: 4px solid black;
+    border-radius: 12%;
+    margin: 5px 10px 10px 10px;
 
+  }
+    img.bakerst{
+      float: right;
+      height: 120px;
+      width: 120px;
+      border: 4px solid black;
+      border-radius: 12%;
+    margin: 5px 10px 10px 10px;
+    }
+p.landingpg{
+    padding-top: 10px;
+    color:rgb(40, 26, 2 );
+    font-size: 20px;
+    text-align: center;
+    }
+img.galleryFeature{
+height: 300px;
+width: 300px;
+border-radius: 12px;
+border: 4px solid black;
+}
+div.gallery-slideshow{
+margin-top: 20px;
+display:flex;
+justify-content: center;
+}

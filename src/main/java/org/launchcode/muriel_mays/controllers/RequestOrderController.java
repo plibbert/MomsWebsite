@@ -21,7 +21,7 @@ public class RequestOrderController {
                               @RequestParam String contact){
         String subjectText = "Order Request" + requestType + dateNeeded;
         String bodyText = "Name: " + name + "%0A" + "Email: " + emailAddress + "%0A" + "Phone Number: " + phoneNumber + "%0A" + "Date Needed: " + dateNeeded + "%0A" + "Request Type: " + requestType + "%0A" + "Description: " + description + "%0A" + "Preferred Contact Method: " + contact;
-        String mailtoText = "mailto:murielmays@gmail.com?subject=" + subjectText + "&body=" + bodyText;
+        String mailtoText = "mailto:murielmayssweets@gmail.com?subject=" + subjectText + "&body=" + bodyText;
         return "redirect:" + mailtoText;
     }
 
