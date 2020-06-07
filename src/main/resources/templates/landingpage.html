@@ -4,57 +4,17 @@
 
 <body class="container">
 <div th:replace="fragments :: page-header"></div>
-
-
-
-<p>Welcome to Muriel May's Sweets and Treats!</p>
+<main>
+<h2>Welcome to Muriel May's Sweets and Treats!</h2>
 
 <p>We are a small home bakery offering cookies, cakes and cupcakes, specialty desserts, and more. If you are interested in ordering from us, we ask that you fill out the "request and order form". If you would like to try some of our tasty bakes, keep an eye on our social media to see where we'll be next!</p>
-<div class="container">
 
-    <!-- Full-width images with number text -->
-    <div class="mySlides">
-        <div class="numbertext">1 / 6</div>
-        <img th:src="@{/images/BrookesBirthdayCake.jpg}" alt="Birthday Cake" style="width:100%">
-    </div>
+<img class="pics" th:src="@{/images/PaletteCookies.jpg}" alt="Painter's Palette Cookies"style="width:400px;height:400px;"/>
 
-    <div class="mySlides">
-        <div class="numbertext">2 / 6</div>
-        <img th:src="@{/images/PaletteCookies.jpg}" alt="Painter's Palette Cookies" style="width:100%">
-    </div>
+</main>
 
-    <div class="mySlides">
-        <div class="numbertext">3 / 6</div>
-        <img th:src="@{/images/LemonPecanScones.jpg}" alt="Lemon Pecan Scones" style="width:100%">
-    </div>
-
-    <!-- Next and previous buttons -->
-    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-    <a class="next" onclick="plusSlides(1)">&#10095;</a>
-
-    <!-- Image text -->
-    <div class="caption-container">
-        <p id="caption"></p>
-    </div>
-
-    <!-- Thumbnail images -->
-    <div class="row">
-        <div class="column">
-            <img class="demo cursor" th:src="@{/images/BrookesBirthdayCake.jpg}" style="width:100%" onclick="currentSlide(1)" alt="Birthday Cake">
-        </div>
-        <div class="column">
-            <img class="demo cursor" th:src="@{/images/PaletteCookies.jpg}" style="width:100%" onclick="currentSlide(2)" alt="Painter's Palette Cookies">
-        </div>
-        <div class="column">
-            <img class="demo cursor" th:src="@{/images/LemonPecanScones.jpg}" style="width:100%" onclick="currentSlide(3)" alt="Lemon Pecan Scones">
-        </div>
-
-
-    </div>
-</div>
-<!--<img class="pics" th:src="@{/images/BrookesBirthdayCake.jpg}" alt="Birthday Cake"/>-->
-<!--<img class="pics" th:src="@{/images/PaletteCookies.jpg}" alt="Painter's Palette Cookies"/>-->
-<!--<img class="pics" th:src="@{/images/LemonPecanScones.jpg}" alt="Lemon Pecan Scones"/>-->
-[
 </body>
+
+<footer th:replace="fragments :: footer"></footer>
+
 </html>

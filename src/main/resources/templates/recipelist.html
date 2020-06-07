@@ -4,6 +4,7 @@
 
 <body class="container">
 <div th:replace="fragments :: page-header"></div>
+<main>
 
 <div class="container body-content">
 
@@ -12,7 +13,12 @@
 
 <div th:replace="fragments :: recipe-list-table"></div>
 
+</main>
+
 </body>
+
+<footer th:replace="fragments :: footer"></footer>
+
 </html>
 
 </body>

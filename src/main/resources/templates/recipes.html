@@ -4,12 +4,13 @@
 
 <body class="container">
 <div th:replace="fragments :: page-header"></div>
+<main>
 
 <div class="container body-content">
     <h1 th:text="${#strings.capitalizeWords(title)}"></h1>
     <h2 class = "centered">Recipes</h2>
 </div>
-
+<p id="recipeIntro">If you are looking for a quick recipe to wow your friends, here are a few that we at Muriel May's turn to! Not all of these are our recipes, so we've done our best to let you know who created it originally.</p>
 <table class="centeredTable">
     <tr>
         <th:block th:each="column : ${columns}">
@@ -18,15 +19,15 @@
     </tr>
     <tr>
 
-        <td>
+        <td >
             <ul>
                 <li>
-                    <a th:href="@{/recipes/recipes(column=${'all'}, value=${'all'})}">All Recipes</a>
+                    <a  th:href="@{/recipes/recipes(column=${'all'}, value=${'all'})}" >All Recipes</a>
                 </li>
             </ul>
         </td>
 
-        <td th:each="category : ${tableChoices}">
+        <td  th:each="category : ${tableChoices}">
             <ul>
                 <li th:each="item : ${category.value}">
                     <a th:href="@{/recipes/recipes(column=${category.key},value=${item})}" th:text="${item}"></a>
@@ -35,6 +36,9 @@
         </td>
     </tr>
 </table>
+</main>
 
 </body>
+<footer th:replace="fragments :: footer"></footer>
+
 </html>

@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
     <link th:href="@{/css/muriel_mays.css}" rel="stylesheet" />
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 
     <meta charset="UTF-8"/>
     <title>Muriel May's</title>
@@ -14,7 +16,7 @@
 
 <body class="container">
 
-<nav th:fragment="page-header">
+<nav class="mainNav" th:fragment="page-header">
     <h2>Muriel May's Sweets and Treats</h2>
             <ul class="nav">
                 <li class="nav-item"><a th:href="@{/}">Main</a></li>
@@ -24,13 +26,13 @@
                 <li class="nav-item"><a th:href="@{/order}">Request an Order</a></li>
             </ul>
 </nav>
-<div th:fragment="recipe-list-table">
+<div class= "recipes-list" th:fragment="recipe-list-table">
     <th:block>
         <table class="recipe-list">
             <tr th:each="recipe : ${recipes}">
                 <td>
 <!--                    <div th:text="'ID: ' + ${recipe.id}"></div>-->
-                    <div th:if = "${!#strings.isEmpty(recipe.name)}" th:text="'Name: ' + ${recipe.name}"></div>
+                    <div class="recipe-name" th:if = "${!#strings.isEmpty(recipe.name)}" th:text="'Name: ' + ${recipe.name}"></div>
                     <div th:if = "${!#strings.isEmpty(recipe.category)}" th:text="'Category: ' + ${recipe.category}"></div>
                     <div th:if = "${!#strings.isEmpty(recipe.servings)}" th:text="'Servings: ' + ${recipe.servings}"></div>
                     <div th:if = "${!#strings.isEmpty(recipe.prepTime)}" th:text="'Prep Time: ' + ${recipe.prepTime}"></div>
@@ -50,5 +52,20 @@
         </table>
     </th:block>
 </div>
+
 </body>
+<footer class= "footer" th:fragment="footer">
+    <div class="footer-icons">
+        <a  href="#"><i class="fa fa-facebook"></i></a>
+        <a  href="#"><i class="fa fa-twitter"></i></a>
+        <a  href="#"><i class="fa fa-instagram"></i></a>
+        <a  href="#"><i class="fa fa-pinterest"></i></a>
+    </div>
+    <div class="footer-center">
+        <p class="email"><a href="mailto:murielmays@gmail.com">murielmays@gmail.com</a></p>
+        <p class="footer-company-name">© 2020 Muriel May's Sweets and Treats</p>
+    </div>
+
+
+</footer>
 </html>

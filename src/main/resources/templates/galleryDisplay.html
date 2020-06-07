@@ -15,7 +15,10 @@
             <li class="gallery-item"><a th:href="@{/gallery/Images?category=Savory}">Savory</a></li>
         </ul>
     </nav>
+    <div class="galleryDisplay">
+        <img class="galleryImage" th:each="image : ${images}" th:src="${image}"/>
 
+    </div>
 </main>
 </body>
 
